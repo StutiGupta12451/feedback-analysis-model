@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import joblib
 from tensorflow.keras.models import load_model
-model=load_model('feedback_analysis.h5', compile=False)
+model=load_model('main/feedback_ananlyze/feedback_analysis.h5', compile=False)
 vectorizer=joblib.load("vectorizer.pkl")
 def func(arr):
     ans=model.predict(arr)
@@ -28,4 +28,5 @@ if st.button('process'):
         elif ans=="positive":
             st.success(ans)
         else:
+
             st.warning(ans)
