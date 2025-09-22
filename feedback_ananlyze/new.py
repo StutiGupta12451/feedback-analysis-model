@@ -3,7 +3,7 @@ import numpy as np
 import joblib
 from tensorflow.keras.models import load_model
 model=load_model('feedback_ananlyze/feedback_analysis.h5', compile=False)
-vectorizer=joblib.load("vectorizer.pkl")
+vectorizer=joblib.load("feedback_ananlyze/vectorizer.pkl")
 def func(arr):
     ans=model.predict(arr)
     pred=(ans>0.5).astype("int32")
@@ -30,4 +30,5 @@ if st.button('process'):
         else:
 
             st.warning(ans)
+
 
