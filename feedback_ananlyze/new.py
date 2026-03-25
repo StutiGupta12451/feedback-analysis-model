@@ -15,7 +15,6 @@ def func(arr):
         return "error"
 st.title("Feedback Sentiment Analysis")
 feed = st.text_input("Enter the feedback")
-st.success("86% percent accuracy of model")
 if st.button('process'):
     if not feed.strip():
         st.warning("Please Enter some text!!!!")
